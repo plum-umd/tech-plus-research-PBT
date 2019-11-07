@@ -53,13 +53,3 @@ def dedup(l):
             new_l.append(l[i])
             new_l.append(l[i+1])
     return new_l
-    
-    
-    
-from hypothesis import given
-import hypothesis.strategies as st
-
-@given(st.lists(st.integers()))
-def test_foo(l):
-    assert (dedup(l) == dedup(dedup(l)))
-            
